@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -31,6 +31,7 @@ export default function AdminLoginPage() {
     }
 
     router.push(searchParams.get('next') || '/admin');
+    router.push('/admin');
     router.refresh();
   }
 
