@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import LocationMap from "./admin/LocationMap";
+import LocationMapClient from "./admin/LocationMapClient";
 export default function AdminForm() {
   const router = useRouter();
   const [busy, setBusy] = useState(false);
@@ -101,14 +101,14 @@ export default function AdminForm() {
             <label>Location *</label>
 
             <div style={{ marginTop: "12px", width: "100%" }}>
-              <LocationMap
-                latitude={latitude}
-                longitude={longitude}
-                onLocationChange={(newLatitude, newLongitude) => {
-                  setLatitude(newLatitude);
-                  setLongitude(newLongitude);
-                }}
-              />
+              <LocationMapClient
+  latitude={latitude}
+  longitude={longitude}
+  onLocationChange={(newLatitude, newLongitude) => {
+    setLatitude(newLatitude);
+    setLongitude(newLongitude);
+  }}
+/>
             </div>
 
             {latitude !== null && longitude !== null && (
